@@ -1,0 +1,43 @@
+## Day 1
+
+- Swift yazmaya baslamanin en kolay yolu xcode ustunde playground tusuna basip oradan blank bir dosya olusturmak, platformu istedigimiz gibi secebiliriz cunku dil platformlar arasi degismiyor.
+- `var foo = "bar"` seklinde degisken tanimlanabiliyor, degiskeni ilk basta nasil tanimlarsak daha sonrasinda data tipini degistiremiyoruz, ornegin burada string tnaimladik sonrasinda integer bir degere cevrilemez. Goruldugu uzere `;` isareti kullanilmiyor.
+- Degiskeni degistirmek te cok basit `foo = "baz"` yazmak yeterli
+- Buyuk integer rakamlari alt tire ile ifade edilebiliyor,  `var foo = 8_000_000`, bu sekilde kullanim daha okunakli olmasini sagliyor, aslinda daha okunakli yazmak icin double seklinde yazdik.
+- Asagidaki sekilde multiple line string tanimi yapilabiliyor:
+
+```swift
+var str = """
+first
+second
+"""
+```
+
+Bunun ciktisi su sekilde olacaktir: `first/nsecond`, kesme isareti `/n` olsun istemiyorsak asagisaki sekilde kodu revize edebiliriz:
+
+
+```swift
+var str = """
+first \
+second
+"""
+```
+
+- boolean tanimlamak -> `var foo = true`
+- ondalik sayi -> `var pi = 3.14`, bunu int ile karistirmamak gerek
+- string interpolation ->
+
+```swift
+var num = 35
+var str = "num is /(num)"
+```
+
+- constant tanimlamak icin let kelimesi kullaniliyor `let name = "foo"`
+- her nekadar degisken tipi otomatik alinsada kendimiz belirtebiliyoruz, buna `type annotations` deniyor -> `var foo: Bool = false` gibi bir kullanimi var, Bool, Int,  Double, String tipleri var gordugum kadariyla. Peki neden kullaniliyor, maden her sey otomatik? 3 farkli sebebi var:
+	- internette gelen bir datanin tipini soylmek icin kullanabiliyoruz
+	- double bir veri belirtmek icin kullaniyoruz, ornegin 99 atadik degiskene ama biz 99.0 olmasini istiyoruz bu sebeple double diye ayrica belirtmek gerekir,
+	- degiskeni sonra tanimlamak istedigimiz durumlarda kullaniyoruz, kullanim su sekilde -> `var foo: Double`.
+- Double olusturma yontemleri:
+	- `var foo: Double = 99`
+	- `var foo = 100_000`
+	- `var foo = 99.5`
